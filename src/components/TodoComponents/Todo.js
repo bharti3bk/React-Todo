@@ -1,13 +1,18 @@
-import React ,{Component} from 'react';
+import React,{Component} from 'react';
 
 class ToDo extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props); 
+        this.state = {
+                     toDo :{task: ""}
+        };
     }  
 
     render(){
         return (
-            <div> </div>
+            <div> 
+                <p>{this.props.todo.task}</p>
+                 </div>
         )
     }
 }  
