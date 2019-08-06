@@ -1,20 +1,13 @@
-import React,{Component} from 'react';
+import React from 'react';
 
-class ToDo extends Component {
-    constructor(props){
-        super(props); 
-        this.state = {
-                     toDo :{task: ""}
-        };
-    }  
+const Todo = props => {
+  return (
+    <div
+      className={props.todo.completed ? 'completed' : ''}
+      onClick={() => props.toggleCompleted(props.todo.id)}>
+      <p>{props.todo.task}</p>
+    </div>
+  );
+};
 
-    render(){
-        return (
-            <div> 
-                <p>{this.props.todo.task}</p>
-                 </div>
-        )
-    }
-}  
-
-export default ToDo;
+export default Todo;
